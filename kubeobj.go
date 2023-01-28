@@ -217,6 +217,11 @@ func buildPodTemplate(appDesc AppDescription) apiv1.PodTemplateSpec {
 			Operator: "In",
 			Values:   []string{TargetArch},
 		},
+		apiv1.NodeSelectorRequirement{
+			Key:      "cm",
+			Operator: "In",
+			Values:   []string{"test"},
+		},
 	)
 
 	return apiv1.PodTemplateSpec{
